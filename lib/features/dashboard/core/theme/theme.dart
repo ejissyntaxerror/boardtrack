@@ -20,20 +20,6 @@ class AppTheme {
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.background,
     canvasColor: AppColors.surface,
-    errorColor: AppColors.error,
-    colorScheme: ColorScheme.light(
-      primary: AppColors.primary,
-      primaryContainer: AppColors.primaryLight,
-      secondary: AppColors.accent,
-      background: AppColors.background,
-      surface: AppColors.surface,
-      error: AppColors.error,
-      onPrimary: Colors.white,
-      onSecondary: Colors.black,
-      onSurface: AppColors.textPrimary,
-      onBackground: AppColors.textPrimary,
-      onError: Colors.white,
-    ),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.primary,
       foregroundColor: Colors.white,
@@ -51,7 +37,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: AppColors.primary,
+        backgroundColor: AppColors.primary,
         onPrimary: Colors.white,
         textStyle: GoogleFonts.montserrat(fontWeight: FontWeight.w600),
         shape: RoundedRectangleBorder(
@@ -60,62 +46,62 @@ class AppTheme {
       ),
     ),
     textTheme: TextTheme(
-      headline1: GoogleFonts.montserrat(
+      displayLarge: GoogleFonts.montserrat(
         fontSize: 32,
         fontWeight: FontWeight.bold,
         color: AppColors.textPrimary,
       ),
-      headline2: GoogleFonts.montserrat(
+      displayMedium: GoogleFonts.montserrat(
         fontSize: 28,
         fontWeight: FontWeight.bold,
         color: AppColors.textPrimary,
       ),
-      headline3: GoogleFonts.montserrat(
+      displaySmall: GoogleFonts.montserrat(
         fontSize: 24,
         fontWeight: FontWeight.bold,
         color: AppColors.textPrimary,
       ),
-      headline4: GoogleFonts.montserrat(
+      headlineMedium: GoogleFonts.montserrat(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: AppColors.textPrimary,
       ),
-      headline5: GoogleFonts.montserrat(
+      headlineSmall: GoogleFonts.montserrat(
         fontSize: 18,
         fontWeight: FontWeight.w600,
         color: AppColors.textPrimary,
       ),
-      bodyText1: GoogleFonts.roboto(
+      bodyLarge: GoogleFonts.roboto(
         fontSize: 16,
         fontWeight: FontWeight.normal,
         color: AppColors.textPrimary,
       ),
-      bodyText2: GoogleFonts.roboto(
+      bodyMedium: GoogleFonts.roboto(
         fontSize: 14,
         fontWeight: FontWeight.normal,
         color: AppColors.textSecondary,
       ),
-      subtitle1: GoogleFonts.roboto(
+      titleMedium: GoogleFonts.roboto(
         fontSize: 16,
         fontWeight: FontWeight.w500,
         color: AppColors.textPrimary,
       ),
-      subtitle2: GoogleFonts.roboto(
+      titleSmall: GoogleFonts.roboto(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         color: AppColors.textSecondary,
       ),
-      button: GoogleFonts.montserrat(
+      labelLarge: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w600,
         color: Colors.white,
       ),
-      caption: GoogleFonts.roboto(
+      bodySmall: GoogleFonts.roboto(
         fontSize: 12,
         fontWeight: FontWeight.normal,
         color: AppColors.textSecondary,
       ),
-      overline: GoogleFonts.roboto(
+      labelSmall: GoogleFonts.roboto(
         fontSize: 10,
         fontWeight: FontWeight.normal,
         color: AppColors.textSecondary,
@@ -149,6 +135,18 @@ class AppTheme {
         color: AppColors.textSecondary.withOpacity(0.6),
         fontWeight: FontWeight.normal,
       ),
-    ),
+    ), colorScheme: ColorScheme.light(
+      primary: AppColors.primary,
+      primaryContainer: AppColors.primaryLight,
+      secondary: AppColors.accent,
+      background: AppColors.background,
+      surface: AppColors.surface,
+      error: AppColors.error,
+      onPrimary: Colors.white,
+      onSecondary: Colors.black,
+      onSurface: AppColors.textPrimary,
+      onBackground: AppColors.textPrimary,
+      onError: Colors.white,
+    ).copyWith(error: AppColors.error),
   );
 }
