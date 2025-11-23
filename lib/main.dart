@@ -1,39 +1,35 @@
+import 'package:boardtrack/features/dashboard/core/hive/hive_initializer.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:get_it/get_it.dart';
-import 'core/database/hive_registration.dart';
-import 'data/datasources/boarder_local_data_source_impl.dart';
-import 'data/repositories/boarder_repository_impl.dart';
-import 'screens/boarder_list_screen.dart';
-import 'theme.dart';
-import 'models/boarder_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  registerHiveAdapters();
 
-  // Dependency Injection
-  final boardersBox = await Hive.openBox<BoarderModel>('boarders');
-  GetIt.I.registerSingleton<BoarderLocalDataSourceImpl>(
-    BoarderLocalDataSourceImpl(boardersBox),
-  );
-  GetIt.I.registerSingleton<BoarderRepositoryImpl>(
-    BoarderRepositoryImpl(GetIt.I<BoarderLocalDataSourceImpl>()),
-  );
+  await registerHiveAdapters();
 
-  runApp(const MyApp());
+
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  
+  get appTheme => null;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'BoardTrack',
       theme: appTheme,
-      home: const BoarderListScreen(),
+      home: const Scaffold(
+        body: Center(child: Text('Boarder List')),
+      ),
     );
   }
 }
+
+class BoarderListScreen {
+  const BoarderListScreen();
+}
+
+
